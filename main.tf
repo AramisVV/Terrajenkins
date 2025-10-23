@@ -10,7 +10,7 @@ terraform {
 provider "local" {}
 
 # Variable opcional (para personalizar el nombre)
-variable "nombre_servidor" {
+variable "shylocker_server" {
   description = "Nombre del servidor simulado"
   type        = string
   default     = "Servidor_Prueba"
@@ -18,6 +18,6 @@ variable "nombre_servidor" {
 
 # Este recurso crea un archivo local que representa la 'infraestructura'
 resource "local_file" "infra" {
-  filename = "${var.nombre_servidor}.txt"
+  filename = "${var.shylocker_server}.txt"
   content  = "Infraestructura simulada creada exitosamente. Timestamp: ${timestamp()}"
 }
